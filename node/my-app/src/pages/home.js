@@ -4,7 +4,7 @@ import axios from 'axios';
 const Home = () =>{
     const [info, setInfo] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:3002/get')
+        axios.get('http://localhost:3002/main')
         .then(res => {
           console.log(res.data); // 서버에서 받은 데이터
           setInfo(res.data);
@@ -13,10 +13,7 @@ const Home = () =>{
     return(
         <div>
             모델 성능
-            {JSON.stringify(info.model_performance)}
-            
-            예측값
-            {JSON.stringify(info.predictions)}
+            {info}
         </div>
     )
 }

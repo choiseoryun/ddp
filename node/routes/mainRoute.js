@@ -1,10 +1,14 @@
 const express = require("express")
 const router = express.Router();
-const {mainPage} = require("../controllers/mainController")
+const {mainPage, detailPage} = require("../controllers/mainController")
 
 
 router
-    .route('/')
+    .route('/main')
     .get(mainPage)
+
+router
+    .route('/detail/:id')
+    .get(detailPage)
 
 module.exports = router;

@@ -16,10 +16,11 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 app.use(methodOverride('_method'));
 
-dbConnect()
+//dbConnect() db 연동할 때 필요
 
-app.use('/get',mainroute)
+
+app.use('/',mainroute)
 
 app.listen(port, ()=>{
-    console.log(port+"번 포트에서 실행ㅈㅇ")
+    console.log(port+"번 포트에서 실행중")
 })
