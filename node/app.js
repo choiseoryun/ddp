@@ -16,10 +16,12 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 app.use(methodOverride('_method'));
 
+
 //dbConnect() db 연동할 때 필요
 
 
 app.use('/',mainroute)
+app.use('/images', express.static(path.join(__dirname, '../dataAnalysis/drive/images')));
 
 app.listen(port, ()=>{
     console.log(port+"번 포트에서 실행중")
