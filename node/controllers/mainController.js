@@ -14,7 +14,6 @@ const mainPage = async(req, res) => {
     per: item.PER,      
     macdSignal: item.MACD,        
     bollingerStatus: item.Bollinger, 
-    volume: "item.volume",  
     dividendYield: item.DY}
   })
   predictData = data;
@@ -46,7 +45,6 @@ const detailPage = async(req, res) =>{
     highPrice: detailData.highPrice,
     lowPrice: detailData.lowPrice,
     openPrice: detailData.openPrice,
-    transactionAmount: "",
     upperLimit: detailData.upperLimit,
     lowerLimit: detailData.lowerLimit,
     imagePath: `http://localhost:3002/images/graph${detail+1}.png`,
